@@ -15,7 +15,7 @@ with tab1:
   st.markdown("### 📋 Word Frequency Table")
 
    # Load CSV from GitHub (update the link below)
-  url = "https://raw.githubusercontent.com/JW-1211/streamlit25/refs/heads/main/word_frequency%202.csv"
+  url = "https://raw.githubusercontent.com/JW-1211/streamlit25/refs/heads/main/word_frequency2.csv"
   df = pd.read_csv(url)
 
     # Show table only when button is clicked
@@ -31,7 +31,7 @@ with tab2:
   
   # --- Load CSV from GitHub ---
 
-  url = "https://raw.githubusercontent.com/JW-1211/streamlit25/refs/heads/main/word_frequency%202.csv"  # ← replace this!
+  url = "https://raw.githubusercontent.com/JW-1211/streamlit25/refs/heads/main/word_frequency2.csv"  # ← replace this!
   df = pd.read_csv(url)
   
   # --- Dropdown to select word ---
@@ -54,7 +54,7 @@ with tab3:
     st.caption("Click the button to hear a word. Then type it and press 'Check the answer'.")
 
     # Load CSV
-    url = "https://raw.githubusercontent.com/JW-1211/streamlit25/refs/heads/main/word_frequency%202.csv"  # Replace this!
+    url = "https://raw.githubusercontent.com/JW-1211/streamlit25/refs/heads/main/word_frequency2.csv"  # Replace this!
     df = pd.read_csv(url)
     word_list = df["Word"].dropna().tolist()
 
