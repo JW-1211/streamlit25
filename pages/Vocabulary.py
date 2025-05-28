@@ -98,4 +98,30 @@ with tab3:
         else:
             st.error("❌ Try again.")
 with tab4 : 
-  st.caption("나중에 만들게...")
+  question_word = random.choice(list(word_list()))
+correct_answer = word_list[question_word]
+
+wrong_answers = random.sample(
+    [v for k, v in word_list.items() if v != correct_answer], 3
+)
+
+options = wrong_answers + [correct_answer]
+random.shuffle(options)
+
+# Streamlit UI
+st.title("📘 Vocabulary quiz")
+st.write(f"👉What is the meaning of the word?")
+
+st.subheader(f"📝 {question_word}")
+
+user_choice = st.radio("Select the right meaning :", options)
+
+if st.button("Check answer"):
+    if user_choice == correct_answer:
+        st.success("🎉 Well done!")
+    else:
+        st.error(f"❌ The right answer is : '{correct_answer}'")
+
+if st.button("Next word"):
+    st.experimental_rerun()
+
